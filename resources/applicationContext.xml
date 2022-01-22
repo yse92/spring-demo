@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="myAuto" class="FirstSpring.example1.Automobile">
+
+    </bean>
+    <!-- добавляем взаимодействие (DI)-->
+    <!--    <bean id="myDriver" class="FirstSpring.example1.Driver">-->
+    <!--        <constructor-arg ref="myAuto">-->
+    <!--            &lt;!&ndash; с помощью конструктора &ndash;&gt;-->
+    <!--        </constructor-arg>-->
+    <!--    </bean>-->
+    <bean id="myDriver" class="FirstSpring.example1.Driver">
+        <!-- с помощью сеттера -->
+        <!--   -->
+        <property name="vehicle" ref="myAuto"></property>
+    </bean>
+
+</beans>

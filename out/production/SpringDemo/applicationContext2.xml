@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
+        xmlns:context="http://www.springframework.org/schema/context">
+    <context:property-placeholder location="classpath:myApp.properties"/>
+    <!-- bean definitions here -->
+    <bean id="myVehicle" class="FirstSpring.example2.Automobile">
+        <property name="autoName" value="${autoName}"/>
+    </bean>
+    <bean id="myDriver"
+    class="FirstSpring.example2.Driver">
+            <property name="vehicle" ref="myVehicle"/>
+            <property name="age" value="${age}"/>
+            <property name="name" value="${name}"/>
+    </bean>
+</beans>
